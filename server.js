@@ -40,9 +40,11 @@ app.post('/postmessage', (req,res) => {
 //             if(err) return console.error(err);
 //             res.send(content);
 //         });
+        res.send();
 });
 
-app.get('updateposts', (req, res) => {
+app.get('/updateposts', (req, res) => {
+
         fs.readFile('posts.txt', {encoding : 'utf8'}, (err, content) => {
             if(err) return console.error(err);
             res.send(content);
