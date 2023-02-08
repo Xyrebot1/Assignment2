@@ -42,7 +42,6 @@ function updateposts()
     http.onreadystatechange = function() 
     if(http.readyState == 4 && http.status == 200)
         {
-            alert("A new post has been made!");
             document.getElementById("answer").value = http.responseText;
         }
     http.send();
