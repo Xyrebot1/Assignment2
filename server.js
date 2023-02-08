@@ -36,6 +36,13 @@ app.post('/postmessage', (req,res) => {
             console.log("file was saved!");
         });
         
+//         fs.readFile('posts.txt', {encoding : 'utf8'}, (err, content) => {
+//             if(err) return console.error(err);
+//             res.send(content);
+//         });
+});
+
+app.get('updateposts', (req, res) {
         fs.readFile('posts.txt', {encoding : 'utf8'}, (err, content) => {
             if(err) return console.error(err);
             res.send(content);
