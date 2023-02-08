@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> Assignment 2 </title>
+</head>
+
+<body>
+
+<script type = "text/javascript">
+
+function postmessage()
+{
+    var http = new XMLHttpRequest();
+    var url = '/postmessage';
+    var topic = "topic=" + document.getElementById("topicInput").value;
+    var data = "&data=" + document.getElementById("dataInput").value;
+    var params = topic + data;
+
+    http.open('POST', url, true);
+
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    http.onreadystatechange = function() 
+    {
+        if(http.readyState == 4 && http.status == 200)
+        {
+            alert("A new post has been made!");
+            document.getElementById("answer").value = http.responseText;
+        }
+    };
+    http.send(params);
+}
+
+</script>
+
+<label for="Topic">Topic:</label>
+<input id="topicInput" type="text" name="topic" value=""><br><br>
+<label for="Data">Data:</label>
+<input id="dataInput" type="text" name="data" value=""><br><br>
+<br> <button  onclick= "postmessage()"  > Post </button> <br>
+<textarea id="answer">   </textarea>
+<div id="posts"></div>
+
+</body>
+
+</html>
