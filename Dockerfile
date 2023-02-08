@@ -11,4 +11,4 @@ COPY pages pages
 
 EXPOSE 8080
 
-CMD ["/bin/bash"]
+CMD ["node", "server.js"]
