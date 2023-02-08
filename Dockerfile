@@ -7,7 +7,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY server.js ./
-COPY pages ./
+COPY pages pages
 
 EXPOSE 8080
 
