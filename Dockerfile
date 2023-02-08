@@ -3,7 +3,7 @@ FROM node:19
 WORKDIR /usr/src/app
 
 COPY *.json ./
-COPY postmessage.js ./
+COPY server.js ./
 COPY pages pages
 
 RUN npm add express
