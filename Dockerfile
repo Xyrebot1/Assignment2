@@ -2,9 +2,9 @@ FROM node:19
 
 WORKDIR /usr/src/app
 
-COPY *.json .
-COPY postmessage.js .
-COPY pages/* pages
+COPY *.json ./
+COPY postmessage.js ./
+COPY pages pages
 
 RUN npm add express
 RUN npm add body-parser
