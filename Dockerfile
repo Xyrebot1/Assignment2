@@ -3,12 +3,11 @@ FROM node:19
 WORKDIR /usr/src/app
 
 COPY *.json ./
+
+RUN npm install
+
 COPY server.js ./
 COPY pages pages
-
-RUN npm add express
-RUN npm add body-parser
-RUN npm add fc
 
 EXPOSE 8080
 
