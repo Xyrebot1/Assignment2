@@ -1,13 +1,13 @@
 FROM node:19
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY *.json ./
+COPY package*.json ./
 
 RUN npm install
 
 COPY server.js ./
-COPY pages pages
+COPY pages ./
 
 EXPOSE 8080
 
