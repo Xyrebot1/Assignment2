@@ -31,6 +31,24 @@ function postmessage()
     };
     http.send(params);
 }
+    
+function updateposts()
+{
+    var http = new XMLHttpRequest();
+    var url ='updateposts';
+    http.open('GET', url, true);
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    http.onreadystatechange = function() 
+    if(http.readyState == 4 && http.status == 200)
+        {
+            alert("A new post has been made!");
+            document.getElementById("answer").value = http.responseText;
+        }
+    http.send();
+}
+    
+setInterval(updateposts, 5000);
 
 </script>
 
@@ -39,7 +57,7 @@ function postmessage()
 <label for="Data">Data:</label>
 <input id="dataInput" type="text" name="data" value=""><br><br>
 <br> <button  onclick= "postmessage()"  > Post </button> <br>
-<textarea id="answer">   </textarea>
+<p id="answer">   </p>
 <div id="posts"></div>
 
 </body>
